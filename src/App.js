@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Body from './Components/Body'
 function App(){
   return(
-    <div className='bg-red-500 text-red-50'>App</div>
+    <Body/>
   )
 }
 export default App
