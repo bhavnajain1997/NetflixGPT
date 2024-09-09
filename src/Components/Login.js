@@ -12,13 +12,18 @@ const password = useRef(null);
 
  const handleButtonClick = () => {
   // validate the form data
-  let message = checkValidData(email.current.value, password.current.value);
-  setErrorMessage(message);
-  console.log(message)
-  if(!name.current.value == null){
-     let message = checkValidData(email.current.value, password.current.value, name.current.value)
-     setErrorMessage(message);
+  if(!name == null){
+    let message = checkValidData(email.current.value, password.current.value,name.current.value);
+
+    setErrorMessage(message);
+    console.log(message)
   }
+  else{
+    let message = checkValidData(email.current.value,password.current.value);
+    setErrorMessage(message)
+  }
+  
+  
   // console.log(email.current.value);
   // console.log(password.current.value);
   
