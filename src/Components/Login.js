@@ -21,7 +21,7 @@ const dispatch = useDispatch();
     var message = checkValidData(email.current.value, password.current.value,name.current.value);
 
     setErrorMessage(message);
-    console.log(message)
+    // console.log(message)
   }
   else{
     var  message = checkValidData(email.current.value,password.current.value);
@@ -51,7 +51,7 @@ const dispatch = useDispatch();
       setErrorMessage(error.message)
     });
     
-    console.log(user)
+    // console.log(user)
     // ...
   })
   .catch((error) => {
