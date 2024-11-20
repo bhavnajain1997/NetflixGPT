@@ -32,8 +32,9 @@
 - Build Movie List
 - Build Movie Card
 - TMDB Img CDN Url
--  Made the Browser page amazing with tailwind css.
+- Made the Browser page amazing with tailwind css.
 - usepopularMovies Custom Hooks.
+- GPT Search Feature.
 
 
 
