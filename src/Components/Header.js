@@ -6,9 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser ,removeUser} from '../utils/userSlice';
 import { useEffect } from 'react';
-import { LOGO } from '../utils/constants';
+import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 // import GPTSearch from './GPTSearch';
 import { toggleGptSearchView } from '../utils/GPTSlice';
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -48,12 +49,20 @@ const handleGPTSearchClick = () => {
 
 }
 
+const handleLanguageChange = (e) => {
+  dispatch(changeLanguage(e.target.value));
+}
+
   return (
   
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
       <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
       {user && <div className='flex gap-6'>
        {/* <img className='w-10 h-10' src='' alt='usericon'/> */}
+       
+       <select className='py-2 px-4 mx-4 mb-10' onChange={handleLanguageChange}>
+       {SUPPORTED_LANGUAGES.map(lang=> <option key = {lang.identifier}  value={lang.identifier}>{lang.name}</option> )}
+       </select>
        <button onClick={handleGPTSearchClick} className='font-bold text-white bg-purple-800 py-2 px-4 rounded-lg mx-4 mb-10'>GPT Search</button>
        <img className='w-10 h-10' src = {user.photoURL} alt='usericon'/>
 
