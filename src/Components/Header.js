@@ -10,11 +10,14 @@ import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 // import GPTSearch from './GPTSearch';
 import { toggleGptSearchView } from '../utils/GPTSlice';
 import { changeLanguage } from '../utils/configSlice';
+import GPTSearch from './GPTSearch';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const showGPTSearch = useSelector((store) => store.GPT.showGptSearch)
+
   const handleSignOut = () => {
     signOut(auth)
     .then(() => {
@@ -59,10 +62,12 @@ const handleLanguageChange = (e) => {
       <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
       {user && <div className='flex gap-6'>
        {/* <img className='w-10 h-10' src='' alt='usericon'/> */}
+       { showGPTSearch && 
+           <select className='py-2 px-4 mx-4 mb-10' onChange={handleLanguageChange}>
+           {SUPPORTED_LANGUAGES.map(lang=> <option key = {lang.identifier}  value={lang.identifier}>{lang.name}</option> )}
+           </select>
+       }
        
-       <select className='py-2 px-4 mx-4 mb-10' onChange={handleLanguageChange}>
-       {SUPPORTED_LANGUAGES.map(lang=> <option key = {lang.identifier}  value={lang.identifier}>{lang.name}</option> )}
-       </select>
        <button onClick={handleGPTSearchClick} className='font-bold text-white bg-purple-800 py-2 px-4 rounded-lg mx-4 mb-10'>GPT Search</button>
        <img className='w-10 h-10' src = {user.photoURL} alt='usericon'/>
 
