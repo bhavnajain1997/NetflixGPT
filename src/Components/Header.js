@@ -63,8 +63,8 @@ const handleLanguageChange = (e) => {
       {user && <div className='flex gap-6'>
        {/* <img className='w-10 h-10' src='' alt='usericon'/> */}
        { showGPTSearch && 
-           <select className='py-2 px-4 mx-4 mb-10' onChange={handleLanguageChange}>
-           {SUPPORTED_LANGUAGES.map(lang=> <option key = {lang.identifier}  value={lang.identifier}>{lang.name}</option> )}
+           <select className='py-2 px-4 mx-4 mb-10 bg-black text-white' onChange={handleLanguageChange}>
+           {SUPPORTED_LANGUAGES.map(lang=> <option className='bg-zinc-900 text-white' key = {lang.identifier}  value={lang.identifier}>{lang.name}</option> )}
            </select>
        }
        
