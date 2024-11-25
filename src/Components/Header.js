@@ -10,7 +10,6 @@ import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 // import GPTSearch from './GPTSearch';
 import { toggleGptSearchView } from '../utils/GPTSlice';
 import { changeLanguage } from '../utils/configSlice';
-import GPTSearch from './GPTSearch';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -68,7 +67,7 @@ const handleLanguageChange = (e) => {
            </select>
        }
        
-       <button onClick={handleGPTSearchClick} className='font-bold text-white bg-purple-800 py-2 px-4 rounded-lg mx-4 mb-10'>GPT Search</button>
+       <button onClick={handleGPTSearchClick} className='font-bold text-white bg-purple-800 py-2 px-4 rounded-lg mx-4 mb-10'>{showGPTSearch ? "Homepage" : "GPT Search"}</button>
        <img className='w-10 h-10' src = {user.photoURL} alt='usericon'/>
 
        <button onClick={handleSignOut} className="font-bold text-white bg-red-600 py-2 px-4 mx-4 mb-10 rounded-lg"> Sign Out</button>

@@ -20,4 +20,7 @@ export const API_OPTIONS = {
     {identifier: "spanish",name: "Spanish"},
     {identifier: "french", name: "French"},
     {identifier: "german", name: "German"}
-  ]
+  ];
+
+export const GEMINI_KEY = "AIzaSyCsGzaW8wjWxypbG7PhYNflyGSohAAx3bM";
+export const { GoogleGenerativeAI } = require("@google/generative-ai");
