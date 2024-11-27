@@ -8,12 +8,11 @@ import { addGptMovieResult } from '../utils/GPTSlice';
 
 
 const GPTSearchBar = () => {
-  const langKey = useSelector(store => store.config.lang);
   const dispatch = useDispatch();
+  const langKey = useSelector(store => store.config.lang);
   const searchText = useRef(null);
 
   // Search Movie in TMDB
-
   const searchMovieTMDB =  async (movie) => {
     const data = await fetch("https://api.themoviedb.org/3/search/movie?query="+
       movie
@@ -21,7 +20,8 @@ const GPTSearchBar = () => {
     );
     const json = await data.json();
     return json.results;
-  } 
+  }
+   
 
   const handleGPTSearchClick = async () => {
     console.log(searchText.current.value);
@@ -44,7 +44,7 @@ const GPTSearchBar = () => {
     const promiseArray = gptMovies.map(movie => searchMovieTMDB(movie))
     const tmdbResults = await Promise.all(promiseArray)
     // console.log(tmdbResults);
-    dispatch(addGptMovieResult(tmdbResults));
+    dispatch(addGptMovieResult({movieNames:gptMovies, movieResults: tmdbResults}));
   }
 
   return (
