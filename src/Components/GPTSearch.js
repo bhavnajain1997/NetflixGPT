@@ -10,7 +10,7 @@ const GPTSearch = () => {
       - GPT Search Bar
       - GPT Movies Suggestion
       */}
-      <div className='absolute -z-10 bg-gradient-to-r from-black'>
+      <div className='fixed -z-10 bg-gradient-to-r from-black'>
             <img src={BG_IMG} alt='background'/>
         </div>
       <GPTSearchBar/>

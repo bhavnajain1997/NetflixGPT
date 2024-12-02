@@ -6,7 +6,7 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYWE2YjFlZjcxZjBjYmMxOTQ0ZDkzMjRjZThjNGRmYSIsIm5iZiI6MTcyOTE4NjE5OS43OTAzNzEsInN1YiI6IjY2NmM4MDczZWRjNjkwMTE5NzE4ODY5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SCSuzsuJjXeG5uzh9G9Xmp3zy88dSWoOBYzk1hhg3yM'
+      Authorization: 'Bearer '+process.env.REACT_APP_TMDB_KEY,
     }
   };
 
@@ -22,5 +22,5 @@ export const API_OPTIONS = {
     {identifier: "german", name: "German"}
   ];
 
-export const GEMINI_KEY = "AIzaSyCsGzaW8wjWxypbG7PhYNflyGSohAAx3bM";
+export const GEMINI_KEY =  process.env.REACT_APP_GEMINI_KEY;
 export const { GoogleGenerativeAI } = require("@google/generative-ai");

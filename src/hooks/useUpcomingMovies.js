@@ -1,7 +1,7 @@
 import  { useEffect } from 'react'
 import { API_OPTIONS } from '../utils/constants'
 import { useDispatch } from 'react-redux'
-import { addPopularMovies, addTopRatedMovies, addUpcomingMovies } from '../utils/moviesSlice';
+import { addUpcomingMovies } from '../utils/moviesSlice';
 export const useUpcomingMovies = () => {
     const dispatch = useDispatch();
     const getUpcomingMovies = async() => {
