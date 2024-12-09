@@ -36,7 +36,16 @@
 - usepopularMovies Custom Hooks.
 - GPT Search page.
 - GPT Search Bar.
-- multi language feature build
+- (Bonus)multi language feature build
+- Get Open AI Api Key
+- fetched gptMoviesSuggestions from TMDB
+- created gptSlice added data
+- Resused Movie List component to make movie suggestion container
+- Memoization
+- Added .env file
+- Adding .env file to gitignore
+- Made our Site Responsive
+
 
 
 
